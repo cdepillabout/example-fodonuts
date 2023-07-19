@@ -1,6 +1,6 @@
 
 final: prev: {
 
-  fod-example-simple = callPackage ./fod-example-simple {};
+  fod-example-simple = final.callPackage ./fod-example-simple {};
 
 }

@@ -12,8 +12,14 @@
     {
       overlay = import ./nix/overlay.nix;
 
-      packages = forAllSystems (system: { inherit (nixpkgsFor.${system}) evilExample; });
+      packages =
+        forAllSystems
+          (system: {
+            inherit (nixpkgsFor.${system})
+              fod-example-simple
+              ;
+          });
 
-      defaultPackage = forAllSystems (system: self.packages.${system}.evilExample);
+      # defaultPackage = forAllSystems (system: self.packages.${system}.evilExample);
     };
 }
