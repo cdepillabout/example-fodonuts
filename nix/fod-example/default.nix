@@ -6,7 +6,7 @@ stdenv.mkDerivation {
 
   # This is the sha256 hash for the string "success", which is output upon this
   # test succeeding.
-  outputHash = "sha256-gbK9TqmMjbZlVPvI12N6GmmhMPMx/rcyt1yqtMSGj9U=";
+  outputHash = "sha256-7k4HUasQi22k9HxS2hh9UXfcNx8PUSp8quxUNOcRwJE=";
   outputHashMode = "flat";
   outputHashAlgo = "sha256";
 
@@ -24,6 +24,8 @@ stdenv.mkDerivation {
     # Make sure curl can access HTTPS sites, like GitHub.
     export SSL_CERT_FILE="${cacert}/etc/ssl/certs/ca-bundle.crt"
 
-    "''${curl[@]}" "https://github.com/BurntSushi/ripgrep/releases/download/13.0.0/ripgrep-13.0.0-x86_64-unknown-linux-musl.tar.gz" > $out
+    "''${curl[@]}" \
+      "https://github.com/BurntSushi/ripgrep/releases/download/13.0.0/ripgrep-13.0.0-x86_64-unknown-linux-musl.tar.gz" \
+      > $out
   '';
 }
