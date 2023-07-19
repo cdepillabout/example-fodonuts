@@ -6,7 +6,7 @@ stdenv.mkDerivation {
 
   # This is the sha256 hash for the string "hello world", which is output upon
   # this derivation building.
-  outputHash = "sha256-qUiQTy8PR5uPgZdpSzAYSw0u0cHNKh7A+4XSmaGSpEc=";
+  outputHash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
   outputHashMode = "flat";
   outputHashAlgo = "sha256";
 

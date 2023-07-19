@@ -17,6 +17,7 @@
           (system: {
             inherit (nixpkgsFor.${system})
               fod-example-simple
+              fod-example
               ;
           });
 
