@@ -1,4 +1,4 @@
-{ cacert, my-wget, lib, stdenv }:
+{ my-wget, lib, stdenv }:
 
 stdenv.mkDerivation {
 
@@ -16,12 +16,8 @@ stdenv.mkDerivation {
   impureEnvVars = lib.fetchers.proxyImpureEnvVars;
 
   buildCommand = ''
-    # Make sure curl can access HTTPS sites, like GitHub.
-    export SSL_CERT_FILE="${cacert}/etc/ssl/certs/ca-bundle.crt"
-
     wget http://google.com -O index.html
 
     echo success > "$out"
   '';
 }
-
