@@ -10,7 +10,7 @@ stdenv.mkDerivation {
   impureEnvVars = lib.fetchers.proxyImpureEnvVars;
 
   buildCommand = ''
-    wget http://google.com -O index.html
+    wget http://www.google.com -O index.html
 
     echo success > "$out"
   '';

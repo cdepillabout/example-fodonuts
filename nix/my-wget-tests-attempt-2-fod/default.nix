@@ -6,7 +6,7 @@ stdenv.mkDerivation {
 
   # This is the sha256 hash for the string "success", which is output upon this
   # test succeeding.
-  outputHash = "sha256-7k4HUasQi22k9HxS2hh9UXfcNx8PUSp8quxUNOcRwJE=";
+  outputHash = "sha256-gbK9TqmMjbZlVPvI12N6GmmhMPMx/rcyt1yqtMSGj9U=";
   outputHashMode = "flat";
   outputHashAlgo = "sha256";
 
@@ -16,7 +16,7 @@ stdenv.mkDerivation {
   impureEnvVars = lib.fetchers.proxyImpureEnvVars;
 
   buildCommand = ''
-    wget http://google.com -O index.html
+    wget http://www.google.com -O index.html
 
     echo success > "$out"
   '';
