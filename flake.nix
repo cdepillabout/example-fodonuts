@@ -18,6 +18,8 @@
             inherit (nixpkgsFor.${system})
               fod-example-simple
               fod-example
+              my-wget
+              my-wget-tests-attempt-1-normal-derivation
               ;
           });
 
