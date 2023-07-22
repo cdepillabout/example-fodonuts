@@ -1,7 +1,7 @@
 { my-wget, lib, stdenv }:
 
 let
-  my-wget-hash = builtins.hash "md5" my-wget.outpath;
+  my-wget-hash = builtins.hashString "md5" my-wget.outPath;
 in
 
 stdenv.mkDerivation {
