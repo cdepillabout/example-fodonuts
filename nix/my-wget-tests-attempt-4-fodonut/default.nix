@@ -1,12 +1,20 @@
 { my-wget, lib, stdenv }:
 
 let
-  my-wget-hash = builtins.hashString "md5" my-wget.outPath;
+  buildCommand = ''
+    wget http://www.google.com -O index.html
+
+    echo success > "$out"
+  '';
+
+  value-to-hash = buildCommand + my-wget.outPath;
+
+  test-name-hash = builtins.hashString "md5" value-to-hash;
 in
 
 stdenv.mkDerivation {
 
-  name = "my-wget-tests-attempt-3-fod-special-name-${my-wget-hash}";
+  name = "my-wget-tests-attempt-4-fodonut-${test-name-hash}";
 
   # This is the sha256 hash for the string "success", which is output upon this
   # test succeeding.
@@ -19,9 +27,5 @@ stdenv.mkDerivation {
   # Needed for people using Nix behind a proxy.
   impureEnvVars = lib.fetchers.proxyImpureEnvVars;
 
-  buildCommand = ''
-    wget http://www.example.com -O index.html
-
-    echo success > "$out"
-  '';
+  inherit buildCommand;
 }

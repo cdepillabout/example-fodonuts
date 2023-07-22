@@ -12,4 +12,6 @@ final: prev: {
   my-wget-tests-attempt-2-fod = final.callPackage ./my-wget-tests-attempt-2-fod {};
 
   my-wget-tests-attempt-3-fod-special-name = final.callPackage ./my-wget-tests-attempt-3-fod-special-name {};
+
+  my-wget-tests-attempt-4-fodonut = final.callPackage ./my-wget-tests-attempt-4-fodonut {};
 }

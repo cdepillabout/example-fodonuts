@@ -22,6 +22,7 @@
               my-wget-tests-attempt-1-normal-derivation
               my-wget-tests-attempt-2-fod
               my-wget-tests-attempt-3-fod-special-name
+              my-wget-tests-attempt-4-fodonut
               ;
           });
 
