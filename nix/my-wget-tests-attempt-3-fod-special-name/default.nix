@@ -1,8 +1,12 @@
 { my-wget, lib, stdenv }:
 
+let
+  my-wget-hash = builtins.hash "md5" my-wget.outpath;
+in
+
 stdenv.mkDerivation {
 
-  name = "my-wget-tests-attempt-2-fod-foobar";
+  name = "my-wget-tests-attempt-3-fod-special-name-${my-wget-hash}";
 
   # This is the sha256 hash for the string "success", which is output upon this
   # test succeeding.
